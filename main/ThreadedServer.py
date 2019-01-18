@@ -12,6 +12,7 @@ class ThreadedServer(object):
 
     def listen(self):
         self.sock.listen(5)
+        print('listening on port ' + str(self.port))
         while True:
             client, address = self.sock.accept()
             client.settimeout(60)
@@ -36,7 +37,7 @@ class ThreadedServer(object):
 
 if __name__ == "__main__":
     while True:
-        port_num = input("Port? ")
+        port_num = input("TCP Port? ")
         try:
             port_num = int(port_num)
             break
