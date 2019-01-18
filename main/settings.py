@@ -80,7 +80,22 @@ DATABASES = {
         'NAME': 'mydatabase',
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'HOST': '127.0.0.1',
+#         'NAME': 'trust',
+#         'PORT': '1433',
+#         'USER': 'sa',
+#         'PASSWORD': 'Ahmad263386',
+#         'OPTIONS': {
+#                 'driver': 'FreeTDS',
+#                 'host_is_server': True,
+#                 "unicode_results": True,
+#                 "extra_params": "tds_version=8.0",
+#         }
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

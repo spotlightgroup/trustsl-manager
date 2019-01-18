@@ -14,15 +14,5 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "main.settings")
 
 
-while True:
-    port_num = input("TCP Port? ")
-    try:
-        port_num = int(port_num)
-        break
-    except ValueError:
-        pass
-# run the tcp socket server
-ThreadedServer('', port_num).listen()
-
 # run http server
 application = get_wsgi_application()

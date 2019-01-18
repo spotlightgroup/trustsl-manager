@@ -27,6 +27,7 @@ class ThreadedServer(object):
                 if data:
                     # Set the response to echo back the recieved data
                     response = data
+                    print(response)
                     client.send(response)
                 else:
                     raise error('Client disconnected')
