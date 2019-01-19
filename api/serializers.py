@@ -36,7 +36,7 @@ class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
         fields = (
-            'id', 'type', 'batch_no', 'trace_no', 'exp_date',
+            'id', 'type', 'batch_no', 'trace_no', 'date',
             'ref_no', 'app_code', 'base', 'receiptPDF',
             'tips', 'signature_img', 'marchant', 'terminal', 'arqc', 'card'
         )
