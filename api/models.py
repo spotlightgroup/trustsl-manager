@@ -5,7 +5,9 @@ from django.db import models
 
 
 class Marchant(models.Model):
-    id = models.CharField(max_length=200, primary_key=True)
+    id = models.CharField(max_length=16, primary_key=True)
+    email = models.EmailField()
+    phone = models.CharField(max_length=16)
 
 
 class Terminal(models.Model):
@@ -35,3 +37,11 @@ class Transaction(models.Model):
     base = models.FloatField()
     tips = models.FloatField()
     signature_img = models.ImageField(upload_to='signatures')
+    arqc = models.ForeignKey(
+        ARQC, on_delete=models.CASCADE, default=1)
+    card = models.ForeignKey(
+        Card, on_delete=models.CASCADE, default=1)
+    terminal = models.ForeignKey(
+        Terminal, on_delete=models.CASCADE, default=1)
+    marchant = models.ForeignKey(
+        Marchant, on_delete=models.CASCADE, default=1)
