@@ -36,7 +36,7 @@ class Transaction(models.Model):
     app_code = models.CharField(max_length=6)
     base = models.FloatField()
     tips = models.FloatField()
-    signature_img = models.ImageField(upload_to='signatures')
+    signature_img = models.ImageField(upload_to='media/imgs/signatures')
     arqc = models.ForeignKey(
         ARQC, on_delete=models.CASCADE, default=1)
     card = models.ForeignKey(
