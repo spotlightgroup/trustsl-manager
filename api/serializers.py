@@ -31,11 +31,12 @@ class TransactionSerializer(serializers.ModelSerializer):
     marchant = MarchantSerializer()
     terminal = TerminalSerializer()
     arqc = ARQCSerializer()
+    card = CardSerializer()
 
     class Meta:
         model = Transaction
         fields = (
             'id', 'type', 'batch_no', 'trace_no', 'exp_date',
-            'ref_no', 'app_code', 'base',
-            'tips', 'signature_img', 'marchant', 'terminal', 'arqc'
+            'ref_no', 'app_code', 'base', 'receiptPDF',
+            'tips', 'signature_img', 'marchant', 'terminal', 'arqc', 'card'
         )
