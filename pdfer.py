@@ -1,7 +1,7 @@
 import pdfkit
 
 
-url = 'http://127.0.0.1:8000/api/home/'
+url = 'http://localhost:8000/api/receipt/2/'
 dist = 'media/PDFs/1.pdf'
 
 

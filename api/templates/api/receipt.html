@@ -14,7 +14,7 @@
 </head>
 
 <body class="container p-5 w-50">
-    <h1 class="text-center text-capitalize mb-4">***** Powered By TrustSl *****</h1>
+    <h3 class="text-center text-capitalize mb-4">***** Powered By TrustSl *****</h3>
 
     <div class="d-flex w-100 justify-content-between">
         <h4 class="text-uppercase">merchant id: </h4>
@@ -112,8 +112,16 @@
         <h3 class="text-uppercase text-center">
             cardholder signature
         </h3>
-        <img src="{{ receipt_data.signature_img }}" alt="">
+        {% if receipt_data.signature_img %}
+        <img class="w-100" src="{{ receipt_date.signature_img.url }}" alt="">
+        {% endif %}
     </div>
+    <br>
+    <br>
+    <br>
+    <h3 class="text-center  text-capitalize mb-4">***** Powered By TrustSl *****</h3>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
