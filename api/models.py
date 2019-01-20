@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-class Marchant(models.Model):
+class Merchant(models.Model):
     id = models.CharField(max_length=16, primary_key=True)
     email = models.EmailField()
     phone = models.CharField(max_length=16)
@@ -56,8 +56,8 @@ class Transaction(models.Model):
         Card, on_delete=models.CASCADE, default=1)
     terminal = models.ForeignKey(
         Terminal, on_delete=models.CASCADE, default=1)
-    marchant = models.ForeignKey(
-        Marchant, on_delete=models.CASCADE, default=1)
+    merchant = models.ForeignKey(
+        Merchant, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.base

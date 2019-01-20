@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from api.models import Card, Terminal, Marchant, Transaction, ARQC
+from api.models import Card, Terminal, Merchant, Transaction, ARQC
 
 
 class CardSerializer(serializers.ModelSerializer):
@@ -15,9 +15,9 @@ class TerminalSerializer(serializers.ModelSerializer):
         fields = ('id', )
 
 
-class MarchantSerializer(serializers.ModelSerializer):
+class MerchantSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Marchant
+        model = Merchant
         fields = ('id', 'email', 'phone')
 
 
@@ -28,7 +28,7 @@ class ARQCSerializer(serializers.ModelSerializer):
 
 
 class TransactionSerializer(serializers.ModelSerializer):
-    marchant = MarchantSerializer()
+    merchant = MerchantSerializer()
     terminal = TerminalSerializer()
     arqc = ARQCSerializer()
     card = CardSerializer()
@@ -38,5 +38,5 @@ class TransactionSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'type', 'batch_no', 'trace_no', 'date',
             'ref_no', 'app_code', 'base', 'receiptPDF',
-            'tips', 'signature_img', 'marchant', 'terminal', 'arqc', 'card'
+            'tips', 'signature_img', 'merchant', 'terminal', 'arqc', 'card'
         )

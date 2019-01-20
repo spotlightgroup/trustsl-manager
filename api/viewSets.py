@@ -1,6 +1,6 @@
 from rest_framework import routers, viewsets
-from api.models import Card, Terminal, Marchant, Transaction, ARQC
-from api.serializers import CardSerializer, TerminalSerializer, MarchantSerializer, TransactionSerializer, ARQCSerializer
+from api.models import Card, Terminal, Merchant, Transaction, ARQC
+from api.serializers import CardSerializer, TerminalSerializer, MerchantSerializer, TransactionSerializer, ARQCSerializer
 
 
 class CardViewSet(viewsets.ModelViewSet):
@@ -13,9 +13,9 @@ class TerminalViewSet(viewsets.ModelViewSet):
     serializer_class = TerminalSerializer
 
 
-class MarchantViewSet(viewsets.ModelViewSet):
-    queryset = Marchant.objects.all()
-    serializer_class = MarchantSerializer
+class MerchantViewSet(viewsets.ModelViewSet):
+    queryset = Merchant.objects.all()
+    serializer_class = MerchantSerializer
 
 
 class ARQCViewSet(viewsets.ModelViewSet):
@@ -32,6 +32,6 @@ router = routers.DefaultRouter()
 
 router.register('cards', CardViewSet)
 router.register('terminals', TerminalViewSet)
-router.register('marchants', MarchantViewSet)
+router.register('merchants', MerchantViewSet)
 router.register('arqc', ARQCViewSet)
 router.register('transactions', TransactionViewSet)

@@ -3,16 +3,16 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from .models import Marchant, Terminal, Transaction, ARQC, Card
+from .models import Merchant, Terminal, Transaction, ARQC, Card
 
 
 class TransactionAdmin(admin.ModelAdmin):
     model = Transaction
-    list_display = ['terminal_id', 'marchant_email', 'base',
+    list_display = ['terminal_id', 'merchant_email', 'base',
                     'tips', 'batch_no', 'trace_no', 'date']
 
-    def marchant_email(self, obj):
-        return obj.marchant.email
+    def merchant_email(self, obj):
+        return obj.merchant.email
 
     def terminal_id(self, obj):
         return obj.terminal.id
@@ -33,12 +33,12 @@ class TerminalAdmin(admin.ModelAdmin):
     list_display = ['id']
 
 
-class MarchantAdmin(admin.ModelAdmin):
-    model = Marchant
+class MerchantAdmin(admin.ModelAdmin):
+    model = Merchant
     list_display = ['id', 'email', 'phone']
 
 
-admin.site.register(Marchant, MarchantAdmin)
+admin.site.register(Merchant, MerchantAdmin)
 admin.site.register(Terminal, TerminalAdmin)
 admin.site.register(ARQC, ARQCAdmin)
 admin.site.register(Card, CardAdmin)
