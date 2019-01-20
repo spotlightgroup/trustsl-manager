@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from api.models import Transaction
 from django.template import loader
+from main.settings import BASE_DIR
 
 
 def receipt(request, id):

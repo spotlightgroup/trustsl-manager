@@ -14,7 +14,7 @@
 </head>
 
 <body class="container p-5 w-50">
-    <h3 class="text-center text-capitalize mb-4">***** Powered By TrustSl *****</h3>
+    <h2 class="text-center text-uppercase mb-4">***** Powered By TrustSl *****</h2>
 
     <div class="d-flex w-100 justify-content-between">
         <h4 class="text-uppercase">merchant id: </h4>
@@ -25,7 +25,6 @@
         <h4 class="text-uppercase">terminal id: </h4>
         <h4>{{receipt_data.terminal.id}}</h4>
     </div>
-    <br>
     <br>
     <div class="d-flex w-100 justify-content-between">
         <h4 class="text-uppercase">card no: </h4>
@@ -81,7 +80,6 @@
         <h2 class="pl-2 text-uppercase">${{ amount}}</h2>
     </div>
     <br>
-    <br>
     <h3>ARQC:</h3>
 
     <div class="row">
@@ -107,19 +105,16 @@
         <h4 class="pl-2 text-uppercase">{{receipt_data.arqc.AID}}</h4>
     </div>
     <br>
-    <br>
     <div class="card-holder">
         <h3 class="text-uppercase text-center">
             cardholder signature
         </h3>
         {% if receipt_data.signature_img %}
-        <img class="w-100" src="{{ receipt_date.signature_img.url }}" alt="">
+        <img class="w-100" src="{{ receipt_data.signature_img.url }}" alt="">
         {% endif %}
     </div>
     <br>
-    <br>
-    <br>
-    <h3 class="text-center  text-capitalize mb-4">***** Powered By TrustSl *****</h3>
+    <h2 class="text-center text-uppercase mb-4">***** Powered By TrustSl *****</h2>
 
 
     <!-- Optional JavaScript -->
