@@ -12,5 +12,6 @@ def receipt(request, id):
     template = loader.get_template('api/receipt.html')
     context = {
         'receipt_data': transaction,
+        'amount': transaction.base + transaction.tips,
     }
     return HttpResponse(template.render(context, request))

@@ -10,12 +10,110 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Receipt Information!</title>
 </head>
 
-<body class="container p-5">
-    <h1 class="text-center text-capitalize">***** Powered By TrustSl *****</h1>
-    <h4><span>merchant id</span></h4>
+<body class="container p-5 w-50">
+    <h1 class="text-center text-capitalize mb-4">***** Powered By TrustSl *****</h1>
+
+    <div class="d-flex w-100 justify-content-between">
+        <h4 class="text-uppercase">merchant id: </h4>
+        <h4>{{receipt_data.merchant.id}}</h4>
+    </div>
+
+    <div class="d-flex w-100 justify-content-between">
+        <h4 class="text-uppercase">terminal id: </h4>
+        <h4>{{receipt_data.terminal.id}}</h4>
+    </div>
+    <br>
+    <br>
+    <div class="d-flex w-100 justify-content-between">
+        <h4 class="text-uppercase">card no: </h4>
+        <h4>{{receipt_data.card.no}}</h4>
+    </div>
+
+    <div class="d-flex w-100 justify-content-between">
+        <h4 class="text-uppercase">exp date: </h4>
+        <h4>{{receipt_data.card.exp_date}}</h4>
+    </div>
+
+    <div class="d-flex w-100 justify-content-between">
+        <h4 class="text-uppercase">transaction type: </h4>
+        <h4 class="text-uppercase">{{receipt_data.type}}</h4>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
+            <h4 class="text-uppercase">batch no: </h4>
+            <h4 class="pl-2 text-uppercase">{{receipt_data.batch_no}}</h4>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <h4 class="text-uppercase">trace no: </h4>
+            <h4 class="pl-2 text-uppercase">{{receipt_data.trace_no}}</h4>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4 class="text-uppercase">time/date: </h4>
+        <h4 class="pl-2 text-uppercase">{{receipt_data.date}}</h4>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4 class="text-uppercase">ref no: </h4>
+        <h4 class="pl-2 text-uppercase">{{receipt_data.ref_no}}</h4>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4 class="text-uppercase">app code: </h4>
+        <h4 class="pl-2 text-uppercase">{{receipt_data.app_code}}</h4>
+    </div>
+    <br>
+    <br>
+    <div class="d-flex justify-content-between">
+        <h2 class="text-uppercase">base: </h2>
+        <h2 class="pl-2 text-uppercase">${{receipt_data.base}}</h2>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h2 class="text-uppercase">tips: </h2>
+        <h2 class="pl-2 text-uppercase">${{receipt_data.tips}}</h2>
+    </div>
+    <br>
+    <div class="d-flex justify-content-between">
+        <h2 class="text-uppercase">amount: </h2>
+        <h2 class="pl-2 text-uppercase">${{ amount}}</h2>
+    </div>
+    <br>
+    <br>
+    <h3>ARQC:</h3>
+
+    <div class="row">
+        <div class="d-flex col-6 justify-content-start">
+            <h4 class="text-uppercase">TSI: </h4>
+            <h4 class="pl-2 text-uppercase">{{receipt_data.arqc.TSI}}</h4>
+        </div>
+        <div class="d-flex col-6 justify-content-end">
+            <h4 class="text-uppercase">ATC: </h4>
+            <h4 class="pl-2 text-uppercase">{{receipt_data.arqc.ATC}}</h4>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4 class="text-uppercase">TVR: </h4>
+        <h4 class="pl-2 text-uppercase">{{receipt_data.arqc.TVR}}</h4>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4 class="text-uppercase">app label: </h4>
+        <h4 class="pl-2 text-uppercase">{{receipt_data.arqc.app_label}}</h4>
+    </div>
+    <div class="d-flex justify-content-between">
+        <h4 class="text-uppercase">AID: </h4>
+        <h4 class="pl-2 text-uppercase">{{receipt_data.arqc.AID}}</h4>
+    </div>
+    <br>
+    <br>
+    <div class="card-holder">
+        <h3 class="text-uppercase text-center">
+            cardholder signature
+        </h3>
+        <img src="{{ receipt_data.signature_img }}" alt="">
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

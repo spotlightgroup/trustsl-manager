@@ -9,23 +9,14 @@ class Merchant(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=16)
 
-    def __str__(self):
-        return self.email
-
 
 class Terminal(models.Model):
     id = models.CharField(max_length=200, primary_key=True)
-
-    def __str__(self):
-        return self.id
 
 
 class Card(models.Model):
     no = models.CharField(max_length=200, primary_key=True)
     exp_date = models.DateField('Exp Date')
-
-    def __str__(self):
-        return self.no
 
 
 class ARQC(models.Model):
@@ -34,9 +25,6 @@ class ARQC(models.Model):
     TVR = models.CharField(max_length=10)
     AID = models.CharField(max_length=16)
     app_label = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.app_label
 
 
 class Transaction(models.Model):
@@ -48,8 +36,8 @@ class Transaction(models.Model):
     app_code = models.CharField(max_length=6)
     base = models.FloatField()
     tips = models.FloatField()
-    signature_img = models.ImageField(upload_to='media/imgs/signatures')
-    receiptPDF = models.FileField(upload_to='media/PDFs')
+    signature_img = models.ImageField(upload_to='imgs/signatures')
+    receiptPDF = models.FileField(upload_to='PDFs')
     arqc = models.ForeignKey(
         ARQC, on_delete=models.CASCADE, default=1)
     card = models.ForeignKey(
@@ -58,6 +46,3 @@ class Transaction(models.Model):
         Terminal, on_delete=models.CASCADE, default=1)
     merchant = models.ForeignKey(
         Merchant, on_delete=models.CASCADE, default=1)
-
-    def __str__(self):
-        return self.base
